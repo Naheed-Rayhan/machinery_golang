@@ -5,7 +5,7 @@ import (
 	"github.com/RichardKnop/machinery/v1/config"
 )
 
-func InitServer() (*machinery.Server, error) {
+func InitServer_v1() (*machinery.Server, error) {
 	cfg := &config.Config{
 		Broker:          "amqp://guest:guest@localhost:5672",
 		DefaultQueue:    "develop_machinery_task",
