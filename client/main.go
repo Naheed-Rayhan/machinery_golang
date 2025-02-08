@@ -27,7 +27,7 @@ func main() {
 	etaTime := time.Now().Add(120 * time.Second) // 60 seconds from now
 	var res *result.AsyncResult
 	res, err = srv.SendTask(&tasks.Signature{
-		UUID: string("1234"),
+		UUID: "1234",
 		Name: "create_live_classroom",
 		Args: []tasks.Arg{
 			{Type: "string", Value: "2021-09-01 10:00:00"},
@@ -51,9 +51,5 @@ func main() {
 	log.Printf("Ending Time: %s\n", taskResult[1])
 	log.Printf("Course ID: %s\n", taskResult[2])
 	log.Printf("Teacher ID: %s\n", taskResult[3])
-
-	if err != nil {
-		log.Println("Error sending task:", err)
-	}
 
 }
